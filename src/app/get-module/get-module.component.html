@@ -1,0 +1,35 @@
+<div class="title">
+    <h4>Add Contact Information</h4>
+  </div>
+  
+  <div>
+      <div class="quickaddForm">
+        <label>Name:</label><input [(ngModel)]="contactData.name" type="text" placeholder="name" class="formFields" required data-value-missing="This field is required!"/>
+        
+        <label>Phone:</label><input [(ngModel)]="contactData.phone" type="tel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="formFields" required data-value-missing="This field is required!"/>
+        
+        <label>Address:</label>
+          <!-- <input [(ngModel)]="contactData.address" placeholder="Contact Address" class="formFields" required /> -->
+          <textarea [(ngModel)]="contactData.address" name="address" id="address" cols="30" rows="10" class="formFields" required data-value-missing="This field is required!"></textarea>
+        
+        <label>Email:</label>
+            <input [(ngModel)]="contactData.email" type="email" placeholder="example@gmail.com" class="formFields" required data-value-missing="This field is required!"/>
+          
+      </div>
+      <div class="quickadd">
+          <button id="QuickAdd" (click)="addContact()">+ Add</button>
+      </div>
+      
+    </div>
+    <div class="title">
+        <h4>Contact Information Details</h4>
+      </div>
+
+    <div>
+        <div class="entry" *ngFor="let c of contacts;">
+          <a class="text" routerLink="/contacts/{{c._id}}">
+           {{c.name}}
+          </a>
+        </div>
+  </div>
+

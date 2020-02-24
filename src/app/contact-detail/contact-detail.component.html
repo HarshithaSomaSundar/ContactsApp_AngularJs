@@ -1,0 +1,9 @@
+<div *ngIf="contact" class="contacts">
+    <h2 class="entry">{{contact.name | uppercase}}</h2>
+    <div class="entry"><span>Phone: </span>{{contact.phone}}</div>
+    <div class="entry"><span>Address: </span>{{contact.address}}</div>
+    <div class="entry"><span>Email: </span>{{contact.email}}</div>
+</div>
+<div class="quickadd">
+    <button id="QuickAdd" (click)="cancel()">Back</button>
+</div>
